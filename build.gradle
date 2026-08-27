@@ -1,0 +1,46 @@
+apply plugin: "java"
+
+sourceSets.main.java.srcDirs = ["src"]
+
+ext{
+    // Pin competitive development to a specific Mindustry release.
+    mindustryVersion = "v159.7"
+}
+
+repositories{
+    mavenCentral()
+
+    // Mirrors the dependency strategy used by the official
+    // Anuken/MindustryJavaModTemplate.
+    ivy{
+        url = 'https://github.com/'
+        patternLayout{
+            artifact '/[organisation]/[module]/releases/download/[revision]/dependencies.jar'
+        }
+        metadataSources{ artifact() }
+        content{
+            includeVersion("Anuken", "Mindustry", mindustryVersion)
+        }
+    }
+}
+
+java{
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+dependencies{
+    compileOnly "Anuken:Mindustry:$mindustryVersion"
+}
+
+jar{
+    archiveFileName = "codefront-mindustry-desktop.jar"
+
+    from(projectDir){
+        include "mod.hjson"
+    }
+
+    from("assets/"){
+        include "**"
+    }
+}

@@ -1,0 +1,8 @@
+displayName: "Codefront"
+name: "codefront-mindustry"
+author: "logout2d"
+main: "codefront.mindustry.CodefrontMod"
+description: "Competitive autonomous robot warfare built on Mindustry."
+version: "0.0.1"
+minGameVersion: 159
+java: true
