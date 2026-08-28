@@ -282,7 +282,7 @@ No accepted game rule or architecture decision required a redesign. Source evide
   1. Fixed-base and defense *mirroring* must be implemented as a Codefront helper; `Schematics` has rotation but no mirror primitive. Minor.
   2. Resource-free weapons are best achieved with per-team `TeamRule.cheat = true` plus a Codefront-owned weapon `Block` set — not per-tick injection. This is an implementation mechanism, not a rule change; it preserves "weapon type + point cost".
   3. Programs can *observe* (fetch/radar/sense) enemy state even though they cannot *control* it. This strengthens the case for the planned `ProgramValidator` and Codefront-owned ownership policy (needed before 2v2); it is consistent with the accepted "competitive validation may later restrict" wording (GAME-DESIGN-v2 §8). Not a redesign.
-  4. The audit result file requested by the original questionnaire (`CF-MIND-AUD-001-RESULT.md`) is folded into this same report file per the active task instructions; no extra file was created.
+  4. The completed audit result was later persisted separately as `docs/audits/CF-MIND-AUD-001-RESULT.md`; the questionnaire `CF-MIND-AUD-001.md` was restored to `origin/main` unchanged.
 
 ---
 
